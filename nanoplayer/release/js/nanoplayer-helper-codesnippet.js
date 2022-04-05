@@ -86,7 +86,7 @@ function createCodeSippet (_config) {
     if (!entryType) {
         for (i = 0, len = entryTypes.length; i < len; i += 1) {
             entryType = entryTypes[i];
-            if (config.source.entries[0][entryType]) {
+            if (config.source.entries && config.source.entries[0][entryType]) {
                 break;
             }
             entryType = undefined;

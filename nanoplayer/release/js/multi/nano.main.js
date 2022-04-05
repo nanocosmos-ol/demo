@@ -85,7 +85,7 @@ var streamobj = [];
                 this.config.playback = this.config.playback || {};
                 this.config.playback.metadata = true;
             }
-            var latencyControlMode = getHTTPParam('latencyControlMode') || getHTTPParam('playback.latencyControlMode');
+            var latencyControlMode = NanoTools.getHTTPParam('playback.latencyControlMode');
             if (latencyControlMode) {
                 this.config.playback = this.config.playback || {};
                 this.config.playback.latencyControlMode = latencyControlMode;

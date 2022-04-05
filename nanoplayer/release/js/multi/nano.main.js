@@ -82,6 +82,11 @@ var streamobj = [];
                 this.config.playback = this.config.playback || {};
                 this.config.playback.metadata = true;
             }
+            var latencyControlMode = getHTTPParam('latencyControlMode') || getHTTPParam('playback.latencyControlMode');
+            if (latencyControlMode) {
+                this.config.playback = this.config.playback || {};
+                this.config.playback.latencyControlMode = latencyControlMode;
+            }
             this.config.source.bintu = {};
             if (!this.bintuQuery.apiurl) {
                 this.bintuQuery.apiurl = (document.location.hostname.indexOf('local') !== -1 && document.location.port !== '666') ? 'https://bintu-local.nanocosmos.de' : 'https://bintu.nanocosmos.de';
